@@ -23,7 +23,7 @@ export const Button = ({
 }: ButtonProps) => {
   const variants = {
     primary:
-      "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl",
+      "bg-linear-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl",
     secondary:
       "bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-200",
     outline:

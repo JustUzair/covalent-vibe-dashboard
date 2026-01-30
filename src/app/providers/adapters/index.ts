@@ -11,7 +11,7 @@ export const adapters = {
   covalent: new CovalentAdapter(),
   alchemy: new AlchemyAdapter(),
   mobula: new MobulaAdapter(),
-  //   codex: new CodexAdapter(),
+  //   codex: new CodexAdapter(), // Has some rate limiting issues/ premium sub required
 };
 
 export type { ProviderAdapter, BaseAdapter };

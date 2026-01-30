@@ -1,8 +1,21 @@
-import { motion } from "framer-motion";
+"use client";
 
-const LoadingSpinner = () => {
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+export const LoadingSpinner = () => {
+  const [dots, setDots] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDots(prev => (prev.length >= 3 ? "" : prev + "."));
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="flex items-center justify-center h-screen bg-white">
+    <div className="flex flex-col items-center justify-center h-screen bg-white gap-6">
       <div className="relative">
         {/* Static Background Ring */}
         <div className="w-12 h-12 border-4 border-gray-100 rounded-full" />
@@ -18,8 +31,15 @@ const LoadingSpinner = () => {
           }}
         />
       </div>
+
+      <motion.p
+        className="text-gray-600 tracking-wide text-2xl font-bold"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
+        Crunching latest data{dots}
+      </motion.p>
     </div>
   );
 };
-
-export default LoadingSpinner;
