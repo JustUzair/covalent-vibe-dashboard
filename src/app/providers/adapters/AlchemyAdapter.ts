@@ -1,7 +1,7 @@
 import {
   runLatencyBenchmark,
   getChainHeadBlock,
-} from "@/app/api/benchmark/utils";
+} from "@/app/providers/adapters/utils";
 import { Network } from "alchemy-sdk";
 import { alchemySdk } from "../sdk";
 import {

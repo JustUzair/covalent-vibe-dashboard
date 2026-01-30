@@ -61,7 +61,7 @@ abstract class BaseAdapter implements ProviderAdapter {
     const provider = this.name;
     try {
       const [latency, freshness] = await Promise.all([
-        this.measureLatency(config),
+        this.measureLatency(config), // runLatencyBenchmark in utils fills in the values
         this.measureDataFreshness(config),
       ]);
 

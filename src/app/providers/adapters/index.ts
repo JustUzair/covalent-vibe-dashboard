@@ -11,7 +11,7 @@ export const adapters = {
   covalent: new CovalentAdapter(),
   alchemy: new AlchemyAdapter(),
   mobula: new MobulaAdapter(),
-  codex: new CodexAdapter(),
+  //   codex: new CodexAdapter(),
 };
 
 export type { ProviderAdapter, BaseAdapter };
