@@ -94,7 +94,7 @@ export const DetailedMetrics = ({
                 <div className="space-y-2">
                   <MetricRow
                     label="Block Lag"
-                    value={selectedResult.metrics.dataFreshness.blockLag.toString()}
+                    value={`~${selectedResult.metrics.dataFreshness.blockLag.toString()} Blocks`}
                   />
                   <MetricRow
                     label="Time Delta"

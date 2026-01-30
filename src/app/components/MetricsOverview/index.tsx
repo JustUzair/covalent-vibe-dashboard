@@ -16,21 +16,25 @@ export const MetricsOverview = ({
       (acc, r) => acc + r.metrics.dataFreshness.blockLag,
       0,
     ) / successfulResults.length;
+  const maxBlockLag = Math.max(
+    ...successfulResults.map(r => r.metrics.dataFreshness.blockLag),
+  );
+
   const totalChains = Math.max(
     ...successfulResults.map(r => r.metrics.coverage?.chains || 0),
   );
 
   const cards = [
     {
-      title: "Average Latency",
+      title: "Avg. Latency",
       value: `${avgLatency.toFixed(2)}ms`,
       icon: <Zap className="w-6 h-6" />,
       color: "from-amber-400 to-orange-500",
       bgColor: "bg-amber-50",
     },
     {
-      title: "Block Lag",
-      value: avgBlockLag.toFixed(1),
+      title: "Max Block Lag",
+      value: `~${maxBlockLag.toString()} Blocks `,
       icon: <Clock className="w-6 h-6" />,
       color: "from-blue-400 to-indigo-500",
       bgColor: "bg-blue-50",
