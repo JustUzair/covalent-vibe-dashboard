@@ -109,9 +109,7 @@ export async function getChainHeadBlock(
 ): Promise<number> {
   // Using public Ethereum RPC as reference
   const rpcUrls: Record<string, string> = {
-    ethereum: "https://eth.llamarpc.com",
-    polygon: "https://polygon.llamarpc.com",
-    bsc: "https://binance.llamarpc.com",
+    ethereum: "https://1rpc.io/eth",
   };
 
   const rpcUrl = rpcUrls[chain] || rpcUrls.ethereum;
